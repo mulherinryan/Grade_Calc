@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		06AC5FCA1AF3421C0092EFD0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06AC5FC91AF3421C0092EFD0 /* main.cpp */; };
 		23CEEF2F1AF437A700770C3C /* Grade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23CEEF2D1AF437A700770C3C /* Grade.cpp */; };
+		23CEEF321AF44B5800770C3C /* Assignments.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23CEEF301AF44B5800770C3C /* Assignments.cpp */; };
+		23CEEF351AF44B6400770C3C /* Quiz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23CEEF331AF44B6400770C3C /* Quiz.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,10 @@
 		06AC5FC91AF3421C0092EFD0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		23CEEF2D1AF437A700770C3C /* Grade.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Grade.cpp; sourceTree = "<group>"; };
 		23CEEF2E1AF437A700770C3C /* Grade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grade.h; sourceTree = "<group>"; };
+		23CEEF301AF44B5800770C3C /* Assignments.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Assignments.cpp; sourceTree = "<group>"; };
+		23CEEF311AF44B5800770C3C /* Assignments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assignments.h; sourceTree = "<group>"; };
+		23CEEF331AF44B6400770C3C /* Quiz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Quiz.cpp; sourceTree = "<group>"; };
+		23CEEF341AF44B6400770C3C /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quiz.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,10 @@
 			isa = PBXGroup;
 			children = (
 				06AC5FC91AF3421C0092EFD0 /* main.cpp */,
+				23CEEF301AF44B5800770C3C /* Assignments.cpp */,
+				23CEEF311AF44B5800770C3C /* Assignments.h */,
+				23CEEF331AF44B6400770C3C /* Quiz.cpp */,
+				23CEEF341AF44B6400770C3C /* Quiz.h */,
 				23CEEF2D1AF437A700770C3C /* Grade.cpp */,
 				23CEEF2E1AF437A700770C3C /* Grade.h */,
 			);
@@ -123,8 +133,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23CEEF321AF44B5800770C3C /* Assignments.cpp in Sources */,
 				06AC5FCA1AF3421C0092EFD0 /* main.cpp in Sources */,
 				23CEEF2F1AF437A700770C3C /* Grade.cpp in Sources */,
+				23CEEF351AF44B6400770C3C /* Quiz.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

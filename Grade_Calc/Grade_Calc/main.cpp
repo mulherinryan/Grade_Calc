@@ -1,40 +1,49 @@
 #include <iostream>
 #include <vector>
 #include "Grade.h"
+#include "Assignments.h"
+#include "Quiz.h"
 
 int main() {
     std::string yesNo;
-    std::string assignment;
     Grade grade;
     
+//------------------------------------------------------------------------------
+    
     std::cout << "Do you have any assignment grades? Enter 'Y' for yes, 'N' for no: ";
-    line11 :
+    Assignments assignments;
+    line14 :
     std::cin >> yesNo;
-    if (yesNo != "y" && yesNo != "Y" && yesNo != "n" && yesNo != "N") {
-        std::cout << "Must enter 'Y' or 'N'." << std::endl;
-        goto line11;
+    // checks if they enter either 'Y' or 'N' (capital or lowercase)
+    if (!grade.checkYesNo(yesNo)) {
+        goto line14;
     }
     std::cout << std::endl << std::endl;
     
     // sets assignment grades
     if (yesNo == "y" || yesNo == "Y") {
-        grade.setAssignment();
-        //grade.printAssignments();
+        assignments.setAssignmentGrades();
     }
     
+//------------------------------------------------------------------------------
+    
     std::cout << "Do you have any quiz grades? Enter 'Y' for yes, 'N' for no: ";
-    line26 :
+    Quiz quiz;
+    line32 :
     std::cin >> yesNo;
-    if (yesNo != "y" && yesNo != "Y" && yesNo != "n" && yesNo != "N") {
-        std::cout << "Must enter 'Y' or 'N'." << std::endl;
-        goto line26;
+    // checks if they enter either 'Y' or 'N' (capital or lowercase)
+    if (!grade.checkYesNo(yesNo)) {
+        goto line32;
     }
     std::cout << std::endl << std::endl;
     
+    // sets quiz grades
     if (yesNo == "y" || yesNo == "Y") {
-        grade.setQuizGrade();
+        quiz.setQuizGrade();
     }
     
-    grade.printAverages();
+    std::cout << "You have " << assignments.getAssignmentPoints() + quiz.getQuizPoints() << " points." << std::endl;
+    //std::cout << "You need 30 more points to get a 'B' in the class.";
+//------------------------------------------------------------------------------
     return 0;
 }

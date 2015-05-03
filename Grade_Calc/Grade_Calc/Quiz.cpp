@@ -32,7 +32,7 @@ void Quiz::setQuizGrade() {
 //------------------------------------------------------------------------------
 
 float Quiz::getQuizPoints() {
-    return (quizAverage / quizWeight);
+    return (quizAverage * quizWeight / 100);
 }
 
 //------------------------------------------------------------------------------

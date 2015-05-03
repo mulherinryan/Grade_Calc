@@ -32,7 +32,7 @@ void Assignments::setAssignmentGrades() {
 //------------------------------------------------------------------------------
 
 float Assignments::getAssignmentPoints() {
-    return (assignmentAverage / assignmentWeight);
+    return (assignmentAverage * assignmentWeight / 100);
 }
 
 //------------------------------------------------------------------------------

@@ -5,7 +5,9 @@
 #include "Quiz.h"
 
 int main() {
-    std::string yesNo;
+    std::string yesNo = "N";
+    float totalPoints = 0;
+    std::vector<float> points;
     Grade grade;
     
 //------------------------------------------------------------------------------
@@ -23,6 +25,7 @@ int main() {
     // sets assignment grades
     if (yesNo == "y" || yesNo == "Y") {
         assignments.setAssignmentGrades();
+        points.push_back(assignments.getAssignmentPoints());
     }
     
 //------------------------------------------------------------------------------
@@ -40,10 +43,18 @@ int main() {
     // sets quiz grades
     if (yesNo == "y" || yesNo == "Y") {
         quiz.setQuizGrade();
+        points.push_back(quiz.getQuizPoints());
     }
     
-    std::cout << "You have " << assignments.getAssignmentPoints() + quiz.getQuizPoints() << " points." << std::endl;
-    //std::cout << "You need 30 more points to get a 'B' in the class.";
+    // sums each element (points) in the vector
+    for (int i = 0; i < points.size(); ++i) {
+        totalPoints += points[i];
+    }
+    
+    std::cout << "_______________________________" << std::endl;
+    std::cout << "You have " << totalPoints << " total points." << std::endl;
+    std::cout << "You need ___ points to achieve a(n) ___ " << std::endl;
+    
 //------------------------------------------------------------------------------
     return 0;
 }

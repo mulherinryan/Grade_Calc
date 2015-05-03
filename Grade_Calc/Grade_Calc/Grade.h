@@ -9,6 +9,7 @@
 class Grade {
 public:
     bool checkYesNo(std::string);
+    bool checkAn(float);
 protected:
     float grade;
 };

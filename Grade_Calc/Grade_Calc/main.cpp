@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
 #include "Grade.h"
-#include "Assignments.h"
-#include "Quiz.h"
 
 int main() {
     
@@ -10,8 +8,8 @@ int main() {
     float pointsNeeded = 0.0;
     float finalWeight = 0.0;
     float scoreNeeded = 0.0;
+    float totalPoints = 0.0;
     std::string yesNo = "N";
-    float totalPoints = 0;
     std::vector<float> points;
     Grade grade;
 
@@ -22,41 +20,75 @@ int main() {
     
 //------------------------------------------------------------------------------
     
-    std::cout << "Do you have any assignment grades? Enter 'Y' for yes, 'N' for no: ";
-    Assignments assignments;
-    line14 :
+    std::cout << "Do you have any Homework grades? Enter 'Y' for yes, 'N' for no: ";
+    line24 :
     std::cin >> yesNo;
     // checks if they enter either 'Y' or 'N' (capital or lowercase)
     if (!grade.checkYesNo(yesNo)) {
-        goto line14;
+        goto line24;
+    }
+    std::cout << std::endl << std::endl;
+    
+    // sets homework grades
+    if (yesNo == "y" || yesNo == "Y") {
+        grade.setHwGrades();
+        points.push_back(grade.getHwPoints());
+    }
+    
+//------------------------------------------------------------------------------
+
+    
+    std::cout << "Do you have any assignment grades? Enter 'Y' for yes, 'N' for no: ";
+    line42 :
+    std::cin >> yesNo;
+    // checks if they enter either 'Y' or 'N' (capital or lowercase)
+    if (!grade.checkYesNo(yesNo)) {
+        goto line42;
     }
     std::cout << std::endl << std::endl;
     
     // sets assignment grades
     if (yesNo == "y" || yesNo == "Y") {
-        assignments.setAssignmentGrades();
-        points.push_back(assignments.getAssignmentPoints());
+        grade.setAssignmentGrades();
+        points.push_back(grade.getAssignmentPoints());
     }
     
 //------------------------------------------------------------------------------
     
     std::cout << "Do you have any quiz grades? Enter 'Y' for yes, 'N' for no: ";
-    Quiz quiz;
-    line32 :
+    line59 :
     std::cin >> yesNo;
     // checks if they enter either 'Y' or 'N' (capital or lowercase)
     if (!grade.checkYesNo(yesNo)) {
-        goto line32;
+        goto line59;
     }
     std::cout << std::endl << std::endl;
     
     // sets quiz grades
     if (yesNo == "y" || yesNo == "Y") {
-        quiz.setQuizGrade();
-        points.push_back(quiz.getQuizPoints());
+        grade.setQuizGrade();
+        points.push_back(grade.getQuizPoints());
     }
     
 //------------------------------------------------------------------------------
+    
+    std::cout << "Do you have any Project grades? Enter 'Y' for yes, 'N' for no: ";
+    line76 :
+    std::cin >> yesNo;
+    // checks if they enter either 'Y' or 'N' (capital or lowercase)
+    if (!grade.checkYesNo(yesNo)) {
+        goto line76;
+    }
+    std::cout << std::endl << std::endl;
+    
+    // sets Project grades
+    if (yesNo == "y" || yesNo == "Y") {
+        grade.setProjectGrades();
+        points.push_back(grade.getProjectPoints());
+    }
+    
+//------------------------------------------------------------------------------
+
     
     // sums each element (points) in the vector
     for (int i = 0; i < points.size(); ++i) {

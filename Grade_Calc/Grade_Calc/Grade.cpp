@@ -159,3 +159,30 @@ float Grade::getProjectPoints() {
 
 //------------------------------------------------------------------------------
 
+void Grade::setExtraGrades() {
+    std::cout << "What is the weight of the extra Grade? %";
+    std::cin >> extraGradeWeight;
+    
+    std::cout << "Grade: %";
+    std::cin >> grade;
+    extraGrades.push_back(grade);
+}
+
+//------------------------------------------------------------------------------
+
+float Grade::getExtraGradesPoints() {
+    return (grade * extraGradeWeight / 100);
+}
+
+//------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+

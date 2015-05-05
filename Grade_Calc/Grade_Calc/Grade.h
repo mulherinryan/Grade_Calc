@@ -28,6 +28,10 @@ public:
     float getProjectPoints();               // Projects
     std::vector<float> projectGrades;
     
+    void setExtraGrades();
+    float getExtraGradesPoints();           // Extra grades
+    std::vector<float> extraGrades;
+    
     
 protected:
     float grade;
@@ -47,6 +51,8 @@ protected:
     int numProjects;
     int projectWeight;
     float projectAverage;
+    
+    int extraGradeWeight;
 };
 
 #endif /* defined(__Grade_Calc__grade__) */

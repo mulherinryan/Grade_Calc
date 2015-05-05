@@ -88,6 +88,34 @@ int main() {
     }
     
 //------------------------------------------------------------------------------
+    
+    // asks for any extra grades
+    std::cout << "Are there any other grades that need to be entered? ";
+    line95 :
+    std::cin >> yesNo;
+    if (!grade.checkYesNo(yesNo)) {
+        goto line95;
+    }
+    std::cout << std::endl << std::endl;
+    
+    if (yesNo == "y" || yesNo == "Y") {
+        line103 :
+        grade.setExtraGrades();
+        points.push_back(grade.getExtraGradesPoints());
+    }
+    
+    std::cout << "Are there any more? ";
+    line109 :
+    std::cin >> yesNo;
+    if (!grade.checkYesNo(yesNo)) {
+        goto line109;
+    }
+    
+    if (yesNo == "y" || yesNo == "Y") {
+        goto line103;
+    }
+    
+//------------------------------------------------------------------------------
 
     
     // sums each element (points) in the vector

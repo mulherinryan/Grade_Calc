@@ -14,19 +14,19 @@ int main() {
     Grade grade;
 
 //------------------------------------------------------------------------------
-        line17:
+    line17:
     std::cout << "What grade are you going for? (Enter as a number i.e. 80): ";
     std::cin >> gradeWanted;
     
     while (std::cin.fail()) {
         std::cin.clear();
         std::cin.ignore(100, '\n');
-        std::cout << "Please enter a number!\n";
+        std::cout << "Please enter a number! ";
         std::cin >> gradeWanted;
     }
     
     if ((gradeWanted < 0 ) || (gradeWanted > 100)) {
-        std::cout << "Please enter a number 0 thru 100"  <<std::endl;
+        std::cout << "Please enter a number 0 - 100"  <<std::endl;
         goto line17;
     }
 
@@ -114,22 +114,21 @@ int main() {
         line103 :
         grade.setExtraGrades();
         points.push_back(grade.getExtraGradesPoints());
-    
-    
-    std::cout << "Are there any more? ";
-    line109 :
-    std::cin >> yesNo;
-    if (!grade.checkYesNo(yesNo)) {
-        goto line109;
+        
+        std::cout << "Are there any more? ";
+        line109 :
+        std::cin >> yesNo;
+        if (!grade.checkYesNo(yesNo)) {
+            goto line109;
     }
     
     if (yesNo == "y" || yesNo == "Y") {
         goto line103;
     }
-    }
+}
+    
 //------------------------------------------------------------------------------
 
-    
     // sums each element (points) in the vector
     for (int i = 0; i < points.size(); ++i) {
         totalPoints += points[i];

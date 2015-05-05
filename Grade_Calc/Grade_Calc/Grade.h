@@ -28,13 +28,17 @@ public:
     float getProjectPoints();               // Projects
     std::vector<float> projectGrades;
     
+                                            // Tests
+    
     void setExtraGrades();
     float getExtraGradesPoints();           // Extra grades
     std::vector<float> extraGrades;
     
     
 protected:
-    float grade;
+    std::string grade;
+    std::string number;
+    float gradeP;
     
     int numHw;
     int hwWeight;
@@ -44,7 +48,7 @@ protected:
     int assignmentWeight;
     float assignmentAverage;
     
-    int numQuizes;
+    int numQuizzes;
     int quizWeight;
     float quizAverage;
     

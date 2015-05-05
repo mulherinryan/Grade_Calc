@@ -14,10 +14,22 @@ int main() {
     Grade grade;
 
 //------------------------------------------------------------------------------
-    
+        line17:
     std::cout << "What grade are you going for? (Enter as a number i.e. 80): ";
     std::cin >> gradeWanted;
     
+    while (std::cin.fail()) {
+        std::cin.clear();
+        std::cin.ignore(100, '\n');
+        std::cout << "Please enter a number!\n";
+        std::cin >> gradeWanted;
+    }
+    
+    if ((gradeWanted < 0 ) || (gradeWanted > 100)) {
+        std::cout << "Please enter a number 0 thru 100"  <<std::endl;
+        goto line17;
+    }
+
 //------------------------------------------------------------------------------
     
     std::cout << "Do you have any Homework grades? Enter 'Y' for yes, 'N' for no: ";
@@ -102,7 +114,7 @@ int main() {
         line103 :
         grade.setExtraGrades();
         points.push_back(grade.getExtraGradesPoints());
-    }
+    
     
     std::cout << "Are there any more? ";
     line109 :
@@ -114,7 +126,7 @@ int main() {
     if (yesNo == "y" || yesNo == "Y") {
         goto line103;
     }
-    
+    }
 //------------------------------------------------------------------------------
 
     

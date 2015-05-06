@@ -8,7 +8,6 @@
 
 class Grade {
 public:
-    Grade();
     bool checkYesNo(std::string);
     bool checkAn(float);
     
@@ -33,7 +32,6 @@ public:
     void setExtraGrades();
     float getExtraGradesPoints();           // Extra grades
     std::vector<float> extraGrades;
-    
     
 protected:
     std::string grade;

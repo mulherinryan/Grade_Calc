@@ -4,10 +4,6 @@
 
 //------------------------------------------------------------------------------
 
-Grade::Grade() {
-    
-}
-
 bool Grade::checkYesNo(std::string input) {
     if (input != "y" && input != "Y" && input != "n" && input != "N") {
         std::cout << "Must enter 'Y' or 'N': ";
@@ -31,7 +27,7 @@ void Grade::setHwGrades() {
     
     int i = 1;
     line33 :
-    std::cout << "What is the weight of Homework assignments? %";
+    std::cout << "What is the weight of Homework assignments? ";
     std::cin >> hwWeight;
     line36 :
     std::cout << "\nHow many Homework assignments did you have? ";
@@ -80,7 +76,7 @@ float Grade::getHwPoints() {
 void Grade::setAssignmentGrades() {
     int i = 1;
     line82 :
-    std::cout << "What is the weight of assignments? %";
+    std::cout << "What is the weight of assignments? ";
     std::cin >> assignmentWeight;
     line85 :
     std::cout << "\nHow many assignments did you have? ";
@@ -129,7 +125,7 @@ float Grade::getAssignmentPoints() {
 void Grade::setQuizGrade() {
     int i = 1;
     line131 :
-    std::cout << "What is the weight of Quizzes? %";
+    std::cout << "What is the weight of Quizzes? ";
     std::cin >> quizWeight;
     line134 :
     std::cout << "\nHow many Quizzes did you have? ";
@@ -178,7 +174,7 @@ float Grade::getQuizPoints() {
 void Grade::setProjectGrades() {
     int i = 1;
     line180 :
-    std::cout << "What is the weight of Projects? %";
+    std::cout << "What is the weight of Projects? ";
     std::cin >> projectWeight;
     line183 :
     std::cout << "\nHow many Projects did you have? ";
@@ -226,7 +222,7 @@ float Grade::getProjectPoints() {
 
 void Grade::setExtraGrades() {
 line228:
-    std::cout << "What is the weight of the extra Grade? %";
+    std::cout << "What is the weight of the extra Grade? ";
     std::cin >> extraGradeWeight;
     
     std::cout << "Grade: %";

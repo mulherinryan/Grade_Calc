@@ -138,7 +138,7 @@ int main() {
     
     // calculates grade needed on final to get the grade wanted
     pointsNeeded = gradeWanted - totalPoints;
-    std::cout << "What is the weight of your final? %";
+    std::cout << "What is the weight of your final? ";
     std::cin >> finalWeight;
     if (pointsNeeded < finalWeight) {
         scoreNeeded = pointsNeeded / finalWeight * 100;
@@ -147,9 +147,9 @@ int main() {
         std::cout << "\n\n___________________________________________" << std::endl << std::endl;
         std::cout << "You wont be able to get the grade you want." << std::endl;
         std::cout << "The best you can get is";
-        if (grade.checkAn(totalPoints + finalWeight)) { std::cout << " an %"; }
-        else { std::cout << " a %"; }
-        std::cout << totalPoints + finalWeight << "." << std::endl;
+        if (grade.checkAn(totalPoints + finalWeight)) { std::cout << " an "; }
+        else { std::cout << " a "; }
+        std::cout << totalPoints + finalWeight << "%." << std::endl;
         return 0;
     }
     
@@ -158,10 +158,10 @@ int main() {
     std::cout << "\n\n_________________________________________________";
     std::cout << "___________________" << std::endl << std::endl;
     std::cout << "You need to score";
-    if (grade.checkAn(scoreNeeded)) { std::cout << " an %"; }
-    else { std::cout << " a %"; }
+    if (grade.checkAn(scoreNeeded)) { std::cout << " an "; }
+    else { std::cout << " a "; }
     std::cout << scoreNeeded;
-    std::cout << " on your final to get the grade you want." << std::endl;
+    std::cout << "% on your final to get the grade you want." << std::endl;
 
 //------------------------------------------------------------------------------
     return 0;

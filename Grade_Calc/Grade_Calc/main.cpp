@@ -2,6 +2,41 @@
 #include <vector>
 #include "Grade.h"
 
+//------------------------------------------------------------------------------
+
+bool checkYesNo(std::string input) {
+    if (input != "y" && input != "Y" && input != "n" && input != "N") {
+        std::cout << "Must enter 'Y' or 'N': ";
+        return false;
+    }
+    return true;
+}
+
+//------------------------------------------------------------------------------
+
+std::string yesNoInput() {
+    line14 :
+    std::string yesNo;
+    std::cin >> yesNo;
+    
+    // checks if they enter either 'Y' or 'N' (capital or lowercase)
+    if (!checkYesNo(yesNo)) {
+        goto line14;
+    }
+    std::cout << std::endl << std::endl;
+    return yesNo;
+}
+
+//------------------------------------------------------------------------------
+
+void question(std::string name) {
+     std::cout << "Do you have any " << name << " grades? Enter 'Y' for yes, 'N' for no: ";
+    return;
+}
+
+//*********************************************************************************************
+//*********************************************************************************************
+
 int main() {
     
     float gradeWanted = 0.0;
@@ -14,10 +49,12 @@ int main() {
     Grade grade;
 
 //------------------------------------------------------------------------------
+    
     line17:
     std::cout << "What grade are you going for? (Enter as a number i.e. 80): ";
     std::cin >> gradeWanted;
     
+    // checks if a number is entered
     while (std::cin.fail()) {
         std::cin.clear();
         std::cin.ignore(100, '\n');
@@ -25,6 +62,7 @@ int main() {
         std::cin >> gradeWanted;
     }
     
+    // checks the number is between 0 and 100
     if ((gradeWanted < 0 ) || (gradeWanted > 100)) {
         std::cout << "Please enter a number 0 - 100"  <<std::endl;
         goto line17;
@@ -32,14 +70,9 @@ int main() {
 
 //------------------------------------------------------------------------------
     
-    std::cout << "Do you have any Homework grades? Enter 'Y' for yes, 'N' for no: ";
-    line24 :
-    std::cin >> yesNo;
-    // checks if they enter either 'Y' or 'N' (capital or lowercase)
-    if (!grade.checkYesNo(yesNo)) {
-        goto line24;
-    }
-    std::cout << std::endl << std::endl;
+    // Homework grades
+    question("Homework");
+    yesNo = yesNoInput();
     
     // sets homework grades
     if (yesNo == "y" || yesNo == "Y") {
@@ -49,15 +82,9 @@ int main() {
     
 //------------------------------------------------------------------------------
 
-    
-    std::cout << "Do you have any assignment grades? Enter 'Y' for yes, 'N' for no: ";
-    line42 :
-    std::cin >> yesNo;
-    // checks if they enter either 'Y' or 'N' (capital or lowercase)
-    if (!grade.checkYesNo(yesNo)) {
-        goto line42;
-    }
-    std::cout << std::endl << std::endl;
+    // Assignment grades
+    question("Assignment");
+    yesNo = yesNoInput();
     
     // sets assignment grades
     if (yesNo == "y" || yesNo == "Y") {
@@ -67,14 +94,9 @@ int main() {
     
 //------------------------------------------------------------------------------
     
-    std::cout << "Do you have any quiz grades? Enter 'Y' for yes, 'N' for no: ";
-    line59 :
-    std::cin >> yesNo;
-    // checks if they enter either 'Y' or 'N' (capital or lowercase)
-    if (!grade.checkYesNo(yesNo)) {
-        goto line59;
-    }
-    std::cout << std::endl << std::endl;
+    // Quiz grades
+    question("Quiz");
+    yesNo = yesNoInput();
     
     // sets quiz grades
     if (yesNo == "y" || yesNo == "Y") {
@@ -84,14 +106,9 @@ int main() {
     
 //------------------------------------------------------------------------------
     
-    std::cout << "Do you have any Project grades? Enter 'Y' for yes, 'N' for no: ";
-    line76 :
-    std::cin >> yesNo;
-    // checks if they enter either 'Y' or 'N' (capital or lowercase)
-    if (!grade.checkYesNo(yesNo)) {
-        goto line76;
-    }
-    std::cout << std::endl << std::endl;
+    // Project grades
+    question("Project");
+    yesNo = yesNoInput();
     
     // sets Project grades
     if (yesNo == "y" || yesNo == "Y") {
@@ -101,32 +118,25 @@ int main() {
     
 //------------------------------------------------------------------------------
     
-    // asks for any extra grades
+    // asks for any extra grades to be entered
     std::cout << "Are there any other grades that need to be entered? ";
-    line95 :
-    std::cin >> yesNo;
-    if (!grade.checkYesNo(yesNo)) {
-        goto line95;
-    }
-    std::cout << std::endl << std::endl;
+    yesNo = yesNoInput();
     
+    // sets extra grades
     if (yesNo == "y" || yesNo == "Y") {
         line103 :
         grade.setExtraGrades();
         points.push_back(grade.getExtraGradesPoints());
         
+        // asks for any more grades to be entered
         std::cout << "Are there any more? ";
-        line109 :
-        std::cin >> yesNo;
-        if (!grade.checkYesNo(yesNo)) {
-            goto line109;
+        yesNo = yesNoInput();
     }
     
     if (yesNo == "y" || yesNo == "Y") {
         goto line103;
     }
-}
-    
+
 //------------------------------------------------------------------------------
 
     // sums each element (points) in the vector

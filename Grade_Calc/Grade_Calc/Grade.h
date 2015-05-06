@@ -8,29 +8,28 @@
 
 class Grade {
 public:
-    bool checkYesNo(std::string);
     bool checkAn(float);
     
     void setHwGrades();
-    float getHwPoints();                    // Homework
+    float getHwPoints() const;                    // Homework
     std::vector<float> hwGrades;
     
     void setAssignmentGrades();
-    float getAssignmentPoints();            // Assignments
+    float getAssignmentPoints() const;            // Assignments
     std::vector<float> assignmentGrades;
     
     void setQuizGrade();
-    float getQuizPoints();                  // Quizzes
+    float getQuizPoints() const;                  // Quizzes
     std::vector<float> quizGrades;
     
     void setProjectGrades();
-    float getProjectPoints();               // Projects
+    float getProjectPoints() const;               // Projects
     std::vector<float> projectGrades;
     
-                                            // Tests
+                                                  // Tests
     
     void setExtraGrades();
-    float getExtraGradesPoints();           // Extra grades
+    float getExtraGradesPoints() const;           // Extra grades
     std::vector<float> extraGrades;
     
 protected:

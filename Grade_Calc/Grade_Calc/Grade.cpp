@@ -4,16 +4,6 @@
 
 //------------------------------------------------------------------------------
 
-bool Grade::checkYesNo(std::string input) {
-    if (input != "y" && input != "Y" && input != "n" && input != "N") {
-        std::cout << "Must enter 'Y' or 'N': ";
-        return false;
-    }
-    return true;
-}
-
-//------------------------------------------------------------------------------
-
 bool Grade::checkAn(float num) {
     if (num >= 80 && num < 90) {
         return true;
@@ -67,7 +57,7 @@ void Grade::setHwGrades() {
 
 //------------------------------------------------------------------------------
 
-float Grade::getHwPoints() {
+float Grade::getHwPoints() const {
     return (hwAverage * hwWeight / 100);
 }
 
@@ -116,7 +106,7 @@ void Grade::setAssignmentGrades() {
 
 //------------------------------------------------------------------------------
 
-float Grade::getAssignmentPoints() {
+float Grade::getAssignmentPoints() const {
     return (assignmentAverage * assignmentWeight / 100);
 }
 
@@ -165,7 +155,7 @@ void Grade::setQuizGrade() {
 
 //------------------------------------------------------------------------------
 
-float Grade::getQuizPoints() {
+float Grade::getQuizPoints() const {
     return (quizAverage * quizWeight / 100);
 }
 
@@ -214,7 +204,7 @@ void Grade::setProjectGrades() {
 
 //------------------------------------------------------------------------------
 
-float Grade::getProjectPoints() {
+float Grade::getProjectPoints() const {
     return (projectAverage * projectWeight / 100);
 }
 
@@ -236,7 +226,7 @@ line228:
 
 //------------------------------------------------------------------------------
 
-float Grade::getExtraGradesPoints() {
+float Grade::getExtraGradesPoints() const {
     return (gradeP * extraGradeWeight / 100);
 }
 

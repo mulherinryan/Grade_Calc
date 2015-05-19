@@ -34,8 +34,8 @@ void question(std::string name) {
     return;
 }
 
-//*********************************************************************************************
-//*********************************************************************************************
+/*********************************************************************************************
+**********************************************************************************************/
 
 int main() {
     
@@ -100,7 +100,7 @@ int main() {
     
     // sets quiz grades
     if (yesNo == "y" || yesNo == "Y") {
-        grade.setQuizGrade();
+        grade.setQuizGrades();
         points.push_back(grade.getQuizPoints());
     }
     
@@ -114,6 +114,18 @@ int main() {
     if (yesNo == "y" || yesNo == "Y") {
         grade.setProjectGrades();
         points.push_back(grade.getProjectPoints());
+    }
+    
+//------------------------------------------------------------------------------
+    
+    // Test grades
+    question("Test");
+    yesNo = yesNoInput();
+    
+    // sets test grades
+    if (yesNo == "y" || yesNo == "Y") {
+        grade.setTestGrades();
+        points.push_back(grade.getTestPoints());
     }
     
 //------------------------------------------------------------------------------
@@ -148,8 +160,7 @@ int main() {
     
     // calculates grade needed on final to get the grade wanted
     pointsNeeded = gradeWanted - totalPoints;
-    std::cout << "What is the weight of your final? ";
-    std::cin >> finalWeight;
+    finalWeight = 100 - grade.totalPercent;
     if (pointsNeeded < finalWeight) {
         scoreNeeded = pointsNeeded / finalWeight * 100;
     }

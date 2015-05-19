@@ -8,6 +8,7 @@
 
 class Grade {
 public:
+    Grade();
     bool checkAn(float);
     
     void setHwGrades();
@@ -18,7 +19,7 @@ public:
     float getAssignmentPoints() const;            // Assignments
     std::vector<float> assignmentGrades;
     
-    void setQuizGrade();
+    void setQuizGrades();
     float getQuizPoints() const;                  // Quizzes
     std::vector<float> quizGrades;
     
@@ -26,11 +27,15 @@ public:
     float getProjectPoints() const;               // Projects
     std::vector<float> projectGrades;
     
-                                                  // Tests
+    void setTestGrades();
+    float getTestPoints() const;                  // Tests
+    std::vector<float> testGrades;
     
     void setExtraGrades();
     float getExtraGradesPoints() const;           // Extra grades
     std::vector<float> extraGrades;
+    
+    int totalPercent;
     
 protected:
     std::string grade;
@@ -52,6 +57,10 @@ protected:
     int numProjects;
     int projectWeight;
     float projectAverage;
+    
+    int numTests;
+    int testWeight;
+    float testAverage;
     
     int extraGradeWeight;
 };

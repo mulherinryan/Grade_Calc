@@ -5,12 +5,7 @@
 //------------------------------------------------------------------------------
 
 Grade::Grade() {
-    hwAverage = 0;
-    assignmentAverage = 0;
-    quizAverage = 0;
-    projectAverage = 0;
-    testAverage = 0;
-    assignmentAverage = 0;
+    average = 0;
     totalPercent = 0;
 }
 
@@ -26,22 +21,25 @@ bool Grade::checkAn(float num) {
 //------------------------------------------------------------------------------
 
 void Grade::setHwGrades() {
+    numGrades = 0;
+    weight = 0;
+    average = 0;
     
     int i = 1;
     line33 :
     std::cout << "What is the weight of Homework assignments? ";
-    std::cin >> hwWeight;
-    totalPercent += hwWeight;
+    std::cin >> weight;
+    totalPercent += weight;
     line36 :
     std::cout << "\nHow many Homework assignments did you have? ";
     std::cin >> number;
     if (number == "b" || number == "back") {
         goto line33;
     }
-    numHw = atoi(number.c_str());
+    numGrades = atoi(number.c_str());
     
     // inserts each grade entered into vector homeworkGrades
-    while (i <= numHw) {
+    while (i <= numGrades) {
         line46 :
         std::cout << "Homework " << i << " grade: ";
         std::cin >> grade;
@@ -59,39 +57,43 @@ void Grade::setHwGrades() {
     }
     
     // calculates average grade for all homework assignments
-    for (int i = 0; i < numHw; ++i) {
-        hwAverage += hwGrades[i];
+    for (int i = 0; i < numGrades; ++i) {
+        average += hwGrades[i];
     }
-    hwAverage /= numHw;
+    average /= numGrades;
     std::cout << "__________________________" << std::endl;
     std::cout << std::setprecision(2) << std::fixed;
-    std::cout << "Homework average: " << hwAverage << std::endl << std::endl;
+    std::cout << "Homework average: " << average << std::endl << std::endl;
 }
 
 //------------------------------------------------------------------------------
 
 float Grade::getHwPoints() const {
-    return (hwAverage * hwWeight / 100);
+    return (average * weight / 100);
 }
 
 //------------------------------------------------------------------------------
 
 void Grade::setAssignmentGrades() {
+    numGrades = 0;
+    weight = 0;
+    average = 0;
+    
     int i = 1;
     line82 :
     std::cout << "What is the weight of assignments? ";
-    std::cin >> assignmentWeight;
-    totalPercent += assignmentWeight;
+    std::cin >> weight;
+    totalPercent += weight;
     line85 :
     std::cout << "\nHow many assignments did you have? ";
     std::cin >> number;
     if (number == "b" || number == "back") {
         goto line82;
     }
-    numAssignments = atoi(number.c_str());
+    numGrades = atoi(number.c_str());
     
     // inserts each grade entered into vector assignmentGrades
-    while (i <= numAssignments) {
+    while (i <= numGrades) {
         line95 :
         std::cout << "Assignment " << i << " grade: ";
         std::cin >> grade;
@@ -109,39 +111,43 @@ void Grade::setAssignmentGrades() {
     }
     
     // calculates average grade for all assignments
-    for (int i = 0; i < numAssignments; ++i) {
-        assignmentAverage += assignmentGrades[i];
+    for (int i = 0; i < numGrades; ++i) {
+        average += assignmentGrades[i];
     }
-    assignmentAverage /= numAssignments;
+    average /= numGrades;
     std::cout << "__________________________" << std::endl;
     std::cout << std::setprecision(2) << std::fixed;
-    std::cout << "Assignment average: " << assignmentAverage << std::endl << std::endl;
+    std::cout << "Assignment average: " << average << std::endl << std::endl;
 }
 
 //------------------------------------------------------------------------------
 
 float Grade::getAssignmentPoints() const {
-    return (assignmentAverage * assignmentWeight / 100);
+    return (average * weight / 100);
 }
 
 //------------------------------------------------------------------------------
 
 void Grade::setQuizGrades() {
+    numGrades = 0;
+    weight = 0;
+    average = 0;
+    
     int i = 1;
     line131 :
     std::cout << "What is the weight of Quizzes? ";
-    std::cin >> quizWeight;
-    totalPercent += quizWeight;
+    std::cin >> weight;
+    totalPercent += weight;
     line134 :
     std::cout << "\nHow many Quizzes did you have? ";
     std::cin >> number;
     if (number == "b" || number == "back") {
         goto line131;
     }
-    numQuizzes = atoi(number.c_str());
+    numGrades = atoi(number.c_str());
     
     // inserts each grade entered into vector QuizGrades
-    while (i <= numQuizzes) {
+    while (i <= numGrades) {
         line144 :
         std::cout << "Quiz " << i << " grade: ";
         std::cin >> grade;
@@ -159,39 +165,43 @@ void Grade::setQuizGrades() {
     }
     
     // calculates average grade for all quizes
-    for (int i = 0; i < numQuizzes; ++i) {
-        quizAverage += quizGrades[i];
+    for (int i = 0; i < numGrades; ++i) {
+        average += quizGrades[i];
     }
-    quizAverage /= numQuizzes;
+    average /= numGrades;
     std::cout << "__________________________" << std::endl;
     std::cout << std::setprecision(2) << std::fixed;
-    std::cout << "Quiz average: " << quizAverage << std::endl << std::endl;
+    std::cout << "Quiz average: " << average << std::endl << std::endl;
 }
 
 //------------------------------------------------------------------------------
 
 float Grade::getQuizPoints() const {
-    return (quizAverage * quizWeight / 100);
+    return (average * weight / 100);
 }
 
 //------------------------------------------------------------------------------
 
 void Grade::setProjectGrades() {
+    numGrades = 0;
+    weight = 0;
+    average = 0;
+    
     int i = 1;
     line131 :
     std::cout << "What is the weight of Projects? ";
-    std::cin >> projectWeight;
-    totalPercent += projectWeight;
+    std::cin >> weight;
+    totalPercent += weight;
     line134 :
     std::cout << "\nHow many Projects did you have? ";
     std::cin >> number;
     if (number == "b" || number == "back") {
         goto line131;
     }
-    numProjects = atoi(number.c_str());
+    numGrades = atoi(number.c_str());
     
     // inserts each grade entered into vector projectGrades
-    while (i <= numProjects) {
+    while (i <= numGrades) {
         line144 :
         std::cout << "Project " << i << " grade: ";
         std::cin >> grade;
@@ -209,40 +219,44 @@ void Grade::setProjectGrades() {
     }
     
     // calculates average grade for all projects
-    for (int i = 0; i < numProjects; ++i) {
-        projectAverage += projectGrades[i];
+    for (int i = 0; i < numGrades; ++i) {
+        average += projectGrades[i];
     }
     
-    projectAverage /= numProjects;
+    average /= numGrades;
     std::cout << "__________________________" << std::endl;
     std::cout << std::setprecision(2) << std::fixed;
-    std::cout << "Project average: " << projectAverage << std::endl << std::endl;
+    std::cout << "Project average: " << average << std::endl << std::endl;
 }
 
 //------------------------------------------------------------------------------
 
 float Grade::getProjectPoints() const {
-    return (projectAverage * projectWeight / 100);
+    return (average * weight / 100);
 }
 
 //------------------------------------------------------------------------------
 
 void Grade::setTestGrades() {
+    numGrades = 0;
+    weight = 0;
+    average = 0;
+    
     int i = 1;
     line131 :
     std::cout << "What is the weight of Tests? ";
-    std::cin >> testWeight;
-    totalPercent += testWeight;
+    std::cin >> weight;
+    totalPercent += weight;
     line134 :
     std::cout << "\nHow many Tests did you have? ";
     std::cin >> number;
     if (number == "b" || number == "back") {
         goto line131;
     }
-    numTests = atoi(number.c_str());
+    numGrades = atoi(number.c_str());
     
     // inserts each grade entered into vector testGrades
-    while (i <= numTests) {
+    while (i <= numGrades) {
         line144 :
         std::cout << "Test " << i << " grade: ";
         std::cin >> grade;
@@ -260,30 +274,32 @@ void Grade::setTestGrades() {
     }
     
     // calculates average grade for all tests
-    for (int i = 0; i < numTests; ++i) {
-        testAverage += testGrades[i];
+    for (int i = 0; i < numGrades; ++i) {
+        average += testGrades[i];
     }
-    testAverage /= numTests;
+    average /= numGrades;
     std::cout << "__________________________" << std::endl;
     std::cout << std::setprecision(2) << std::fixed;
-    std::cout << "Test average: " << testAverage << std::endl << std::endl;
+    std::cout << "Test average: " << average << std::endl << std::endl;
 }
 
 //------------------------------------------------------------------------------
 
 float Grade::getTestPoints() const {
-    return (testAverage * testWeight / 100);
+    return (average * weight / 100);
 }
 
 //------------------------------------------------------------------------------
 
 
 void Grade::setExtraGrades() {
+    weight = 0;
+    
     line228:
     std::cout << "What is the weight of the extra Grade? ";
-    std::cin >> extraGradeWeight;
-    totalPercent += extraGradeWeight;
-    std::cout << "Grade: %";
+    std::cin >> weight;
+    totalPercent += weight;
+    std::cout << "Grade: ";
     std::cin >> number;
     if (number == "b" || number == "back") {
         goto line228;
@@ -295,7 +311,7 @@ void Grade::setExtraGrades() {
 //------------------------------------------------------------------------------
 
 float Grade::getExtraGradesPoints() const {
-    return (gradeP * extraGradeWeight / 100);
+    return (gradeP * weight / 100);
 }
 
 //------------------------------------------------------------------------------

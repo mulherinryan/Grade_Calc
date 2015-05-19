@@ -5,7 +5,6 @@
 #include <vector>
 #include <iostream>
 
-
 class Grade {
 public:
     Grade();
@@ -41,28 +40,9 @@ protected:
     std::string grade;
     std::string number;
     float gradeP;
-    
-    int numHw;
-    int hwWeight;
-    float hwAverage;
-    
-    int numAssignments;
-    int assignmentWeight;
-    float assignmentAverage;
-    
-    int numQuizzes;
-    int quizWeight;
-    float quizAverage;
-    
-    int numProjects;
-    int projectWeight;
-    float projectAverage;
-    
-    int numTests;
-    int testWeight;
-    float testAverage;
-    
-    int extraGradeWeight;
+    int numGrades;
+    int weight;
+    float average;
 };
 
 #endif /* defined(__Grade_Calc__grade__) */

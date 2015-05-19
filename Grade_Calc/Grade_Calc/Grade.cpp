@@ -4,15 +4,6 @@
 
 //------------------------------------------------------------------------------
 
-bool Grade::checkAn(float num) {
-    if (num >= 80 && num < 90) {
-        return true;
-    }
-    return false;
-}
-
-//------------------------------------------------------------------------------
-
 Grade::Grade() {
     hwAverage = 0;
     assignmentAverage = 0;
@@ -22,6 +13,17 @@ Grade::Grade() {
     assignmentAverage = 0;
     totalPercent = 0;
 }
+
+//------------------------------------------------------------------------------
+
+bool Grade::checkAn(float num) {
+    if (num >= 80 && num < 90) {
+        return true;
+    }
+    return false;
+}
+
+//------------------------------------------------------------------------------
 
 void Grade::setHwGrades() {
     

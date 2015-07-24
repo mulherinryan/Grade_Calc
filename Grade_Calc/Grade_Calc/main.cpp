@@ -1,45 +1,9 @@
 #include <iostream>
 #include <vector>
+#include "functions.h"
 #include "Grade.h"
 
-//------------------------------------------------------------------------------
-
-bool checkYesNo(std::string input) {
-    if (input != "y" && input != "Y" && input != "n" && input != "N") {
-        std::cout << "Must enter 'Y' or 'N': ";
-        return false;
-    }
-    return true;
-}
-
-//------------------------------------------------------------------------------
-
-std::string yesNoInput() {
-    line14 :
-    std::string yesNo;
-    std::cin >> yesNo;
-    
-    // checks if they enter either 'Y' or 'N' (capital or lowercase)
-    if (!checkYesNo(yesNo)) {
-        goto line14;
-    }
-    std::cout << std::endl << std::endl;
-    return yesNo;
-}
-
-//------------------------------------------------------------------------------
-
-void question(std::string name) {
-     std::cout << "Do you have any " << name << " grades? Enter 'Y' for yes, 'N' for no: ";
-    return;
-}
-
-//**********************************************************************************************
-//                                              MAIN
-//**********************************************************************************************
-
-int main() {
-    
+int main() {    
     float gradeWanted = 0.0;
     float pointsNeeded = 0.0;
     float finalWeight = 0.0;
@@ -177,7 +141,7 @@ int main() {
     
 //------------------------------------------------------------------------------
     
-    std::cout << "\n\n_________________________________________________";
+    std::cout << "_________________________________________________";
     std::cout << "___________________" << std::endl << std::endl;
     std::cout << "You need to score";
     if (grade.checkAn(scoreNeeded)) { std::cout << " an "; }

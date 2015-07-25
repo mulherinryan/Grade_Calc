@@ -37,7 +37,7 @@ int main() {
     
     // Homework grades
     question("Homework");
-    yesNo = yesNoInput();
+    yesNo = checkYesNo();
     
     // sets homework grades
     if (yesNo == "y" || yesNo == "Y") {
@@ -49,7 +49,7 @@ int main() {
 
     // Assignment grades
     question("Assignment");
-    yesNo = yesNoInput();
+    yesNo = checkYesNo();
     
     // sets assignment grades
     if (yesNo == "y" || yesNo == "Y") {
@@ -61,7 +61,7 @@ int main() {
     
     // Quiz grades
     question("Quiz");
-    yesNo = yesNoInput();
+    yesNo = checkYesNo();
     
     // sets quiz grades
     if (yesNo == "y" || yesNo == "Y") {
@@ -73,7 +73,7 @@ int main() {
     
     // Project grades
     question("Project");
-    yesNo = yesNoInput();
+    yesNo = checkYesNo();
     
     // sets Project grades
     if (yesNo == "y" || yesNo == "Y") {
@@ -85,7 +85,7 @@ int main() {
     
     // Test grades
     question("Test");
-    yesNo = yesNoInput();
+    yesNo = checkYesNo();
     
     // sets test grades
     if (yesNo == "y" || yesNo == "Y") {
@@ -97,7 +97,7 @@ int main() {
     
     // asks for any extra grades to be entered
     std::cout << "Are there any other grades that need to be entered? ";
-    yesNo = yesNoInput();
+    yesNo = checkYesNo();
     
     // sets extra grades
     if (yesNo == "y" || yesNo == "Y") {
@@ -107,7 +107,7 @@ int main() {
         
         // asks for any more grades to be entered
         std::cout << "Are there any more? ";
-        yesNo = yesNoInput();
+        yesNo = checkYesNo();
     }
     
     if (yesNo == "y" || yesNo == "Y") {

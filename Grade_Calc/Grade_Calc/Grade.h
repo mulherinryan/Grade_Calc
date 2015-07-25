@@ -36,7 +36,7 @@ public:
     
     int totalPercent;
     
-protected:
+private:
     std::string grade;
     std::string number;
     float gradeP;

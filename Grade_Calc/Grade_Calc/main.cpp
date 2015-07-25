@@ -9,6 +9,7 @@ int main() {
     float finalWeight = 0.0;
     float scoreNeeded = 0.0;
     float totalPoints = 0.0;
+    float gradeAverage = 0.0;
     std::string yesNo = "N";
     std::vector<float> points;
     Grade grade;
@@ -32,96 +33,100 @@ int main() {
         std::cout << "Please enter a number 0 - 100"  <<std::endl;
         goto line17;
     }
-
-//------------------------------------------------------------------------------
     
-    // Homework grades
-    question("Homework");
+    std::cout << "Do you already know your grade average? ";
     yesNo = checkYesNo();
     
-    // sets homework grades
-    if (yesNo == "y" || yesNo == "Y") {
-        grade.setHwGrades();
-        points.push_back(grade.getHwPoints());
-    }
-    
-//------------------------------------------------------------------------------
-
-    // Assignment grades
-    question("Assignment");
-    yesNo = checkYesNo();
-    
-    // sets assignment grades
-    if (yesNo == "y" || yesNo == "Y") {
-        grade.setAssignmentGrades();
-        points.push_back(grade.getAssignmentPoints());
-    }
-    
-//------------------------------------------------------------------------------
-    
-    // Quiz grades
-    question("Quiz");
-    yesNo = checkYesNo();
-    
-    // sets quiz grades
-    if (yesNo == "y" || yesNo == "Y") {
-        grade.setQuizGrades();
-        points.push_back(grade.getQuizPoints());
-    }
-    
-//------------------------------------------------------------------------------
-    
-    // Project grades
-    question("Project");
-    yesNo = checkYesNo();
-    
-    // sets Project grades
-    if (yesNo == "y" || yesNo == "Y") {
-        grade.setProjectGrades();
-        points.push_back(grade.getProjectPoints());
-    }
-    
-//------------------------------------------------------------------------------
-    
-    // Test grades
-    question("Test");
-    yesNo = checkYesNo();
-    
-    // sets test grades
-    if (yesNo == "y" || yesNo == "Y") {
-        grade.setTestGrades();
-        points.push_back(grade.getTestPoints());
-    }
-    
-//------------------------------------------------------------------------------
-    
-    // asks for any extra grades to be entered
-    std::cout << "Are there any other grades that need to be entered? ";
-    yesNo = checkYesNo();
-    
-    // sets extra grades
-    if (yesNo == "y" || yesNo == "Y") {
-        line103 :
-        grade.setExtraGrades();
-        points.push_back(grade.getExtraGradesPoints());
-        
-        // asks for any more grades to be entered
-        std::cout << "Are there any more? ";
+    if (yesNo == "n" || yesNo == "N") {
+        // Homework grades
+        question("Homework");
         yesNo = checkYesNo();
-    }
-    
-    if (yesNo == "y" || yesNo == "Y") {
-        goto line103;
+        
+        // sets homework grades
+        if (yesNo == "y" || yesNo == "Y") {
+            grade.setHwGrades();
+            points.push_back(grade.getHwPoints());
+        }
+        
+        //------------------------------------------------------------------------------
+        
+        // Assignment grades
+        question("Assignment");
+        yesNo = checkYesNo();
+        
+        // sets assignment grades
+        if (yesNo == "y" || yesNo == "Y") {
+            grade.setAssignmentGrades();
+            points.push_back(grade.getAssignmentPoints());
+        }
+        
+        //------------------------------------------------------------------------------
+        
+        // Quiz grades
+        question("Quiz");
+        yesNo = checkYesNo();
+        
+        // sets quiz grades
+        if (yesNo == "y" || yesNo == "Y") {
+            grade.setQuizGrades();
+            points.push_back(grade.getQuizPoints());
+        }
+        
+        //------------------------------------------------------------------------------
+        
+        // Project grades
+        question("Project");
+        yesNo = checkYesNo();
+        
+        // sets Project grades
+        if (yesNo == "y" || yesNo == "Y") {
+            grade.setProjectGrades();
+            points.push_back(grade.getProjectPoints());
+        }
+        
+        //------------------------------------------------------------------------------
+        
+        // Test grades
+        question("Test");
+        yesNo = checkYesNo();
+        
+        // sets test grades
+        if (yesNo == "y" || yesNo == "Y") {
+            grade.setTestGrades();
+            points.push_back(grade.getTestPoints());
+        }
+        
+        //------------------------------------------------------------------------------
+        
+        // asks for any extra grades to be entered
+        std::cout << "Are there any other grades that need to be entered? ";
+        yesNo = checkYesNo();
+        
+        // sets extra grades
+        while (yesNo == "y" || yesNo == "Y") {
+            line103 :
+            grade.setExtraGrades();
+            points.push_back(grade.getExtraGradesPoints());
+            
+            // asks for any more grades to be entered
+            std::cout << "Are there any more? ";
+            yesNo = checkYesNo();
+        }
+        
+        //------------------------------------------------------------------------------
+        
+        // sums each element (points) in the vector
+        for (int i = 0; i < points.size(); ++i) {
+            totalPoints += points[i];
+        }
     }
 
-//------------------------------------------------------------------------------
-
-    // sums each element (points) in the vector
-    for (int i = 0; i < points.size(); ++i) {
-        totalPoints += points[i];
+    else {
+        std::cout << "What is your grade average: ";
+        std::cin >> gradeAverage;
+        std::cout << "what is the weight of your final: ";
+        std::cin >> finalWeight;
     }
-    
-//------------------------------------------------------------------------------
     
     // calculates grade needed on final to get the grade wanted
     pointsNeeded = gradeWanted - totalPoints;

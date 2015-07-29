@@ -12,12 +12,9 @@ int main() {
     float finalWeight = 0.0;
     float scoreNeeded = 0.0;
     float totalPoints = 0.0;
-//    float gradeAverage = 0.0;
     bool yesNo = "N";
     vector<float> points;
     Grade grade;
-
-//------------------------------------------------------------------------------
     
     cout << "What grade are you going for? (Enter as a number i.e. 80): ";
     line17:
@@ -43,9 +40,9 @@ int main() {
     
     // if average is not already known, asks for individual grades
     if (!yesNo) {
-        cout << "------------------------------------------------------------" << endl;
-        cout << "|Note: You can type 'b' or 'back' to go to previous question.|" << endl;
-        cout << "------------------------------------------------------------" << endl;
+        cout << "----------------------------------------------------------------------" << endl;
+        cout << "|Note: You can type 'b' or 'back' anytime to go to previous question.|" << endl;
+        cout << "----------------------------------------------------------------------" << endl;
         
         // Homework grades
         question("Homework");

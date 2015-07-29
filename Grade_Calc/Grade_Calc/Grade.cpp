@@ -89,7 +89,7 @@ void Grade::setAssignmentGrades() {
     cin >> weight;
     totalPercent += weight;
     line85 :
-    cout << "\nHow many assignments did you have: ";
+    cout << "How many assignments did you have: ";
     cin >> number;
     if (number == "b" || number == "back") {
         goto line82;
@@ -144,7 +144,7 @@ void Grade::setQuizGrades() {
     cin >> weight;
     totalPercent += weight;
     line134 :
-    cout << "\nHow many Quizzes did you have: ";
+    cout << "How many Quizzes did you have: ";
     cin >> number;
     if (number == "b" || number == "back") {
         goto line131;
@@ -199,7 +199,7 @@ void Grade::setProjectGrades() {
     cin >> weight;
     totalPercent += weight;
     line134 :
-    cout << "\nHow many Projects did you have: ";
+    cout << "How many Projects did you have: ";
     cin >> number;
     if (number == "b" || number == "back") {
         goto line131;
@@ -255,7 +255,7 @@ void Grade::setTestGrades() {
     cin >> weight;
     totalPercent += weight;
     line134 :
-    cout << "\nHow many Tests did you have: ";
+    cout << "How many Tests did you have: ";
     cin >> number;
     if (number == "b" || number == "back") {
         goto line131;

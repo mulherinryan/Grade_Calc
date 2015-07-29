@@ -4,21 +4,26 @@
 #include <stdio.h>
 //#include <string>
 
-std::string checkYesNo() {
-    std::string input = " ";
-    std::cin >> input;
+using namespace std;
+
+bool checkYesNo() {
+    string input = " ";
+    cin >> input;
     while (input != "y" && input != "Y" && input != "n" && input != "N") {
-        std::cout << "Must enter 'Y' or 'N': ";
-        std::cin >> input;
-        std::cout << std::endl;
+        cout << "Must enter 'Y' or 'N': ";
+        cin >> input;
+        cout << endl;
     }
-    return input;
+    if (input == "y" || input == "Y") {
+        return true;
+    }
+    return false;
 }
 
 //------------------------------------------------------------------------------
 
-void question(std::string name) {
-    std::cout << "Do you have any " << name << " grades? Enter 'Y' for yes, 'N' for no: ";
+void question(string name) {
+    cout << "Do you have any " << name << " grades? Enter 'Y' for yes, 'N' for no: ";
     return;
 }
 

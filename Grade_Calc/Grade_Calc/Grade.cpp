@@ -29,11 +29,12 @@ void Grade::setHwGrades() {
     
     int i = 1;
     line33 :
-    cout << "What is the weight of Homework assignments? ";
+    cout << "______________________________________________" << endl;
+    cout << "What is the weight of Homework assignments: ";
     cin >> weight;
     totalPercent += weight;
     line36 :
-    cout << "\nHow many Homework assignments did you have? ";
+    cout << "How many Homework assignments did you have: ";
     cin >> number;
     if (number == "b" || number == "back") {
         goto line33;
@@ -83,11 +84,12 @@ void Grade::setAssignmentGrades() {
     
     int i = 1;
     line82 :
-    cout << "What is the weight of assignments? ";
+    cout << "______________________________________________" << endl;
+    cout << "What is the weight of assignments: ";
     cin >> weight;
     totalPercent += weight;
     line85 :
-    cout << "\nHow many assignments did you have? ";
+    cout << "\nHow many assignments did you have: ";
     cin >> number;
     if (number == "b" || number == "back") {
         goto line82;
@@ -137,11 +139,12 @@ void Grade::setQuizGrades() {
     
     int i = 1;
     line131 :
-    cout << "What is the weight of Quizzes? ";
+    cout << "______________________________________________" << endl;
+    cout << "What is the weight of Quizzes: ";
     cin >> weight;
     totalPercent += weight;
     line134 :
-    cout << "\nHow many Quizzes did you have? ";
+    cout << "\nHow many Quizzes did you have: ";
     cin >> number;
     if (number == "b" || number == "back") {
         goto line131;
@@ -191,11 +194,12 @@ void Grade::setProjectGrades() {
     
     int i = 1;
     line131 :
-    cout << "What is the weight of Projects? ";
+    cout << "______________________________________________" << endl;
+    cout << "What is the weight of Projects: ";
     cin >> weight;
     totalPercent += weight;
     line134 :
-    cout << "\nHow many Projects did you have? ";
+    cout << "\nHow many Projects did you have: ";
     cin >> number;
     if (number == "b" || number == "back") {
         goto line131;
@@ -246,11 +250,12 @@ void Grade::setTestGrades() {
     
     int i = 1;
     line131 :
-    cout << "What is the weight of Tests? ";
+    cout << "______________________________________________" << endl;
+    cout << "What is the weight of Tests: ";
     cin >> weight;
     totalPercent += weight;
     line134 :
-    cout << "\nHow many Tests did you have? ";
+    cout << "\nHow many Tests did you have: ";
     cin >> number;
     if (number == "b" || number == "back") {
         goto line131;
@@ -298,7 +303,8 @@ void Grade::setExtraGrades() {
     weight = 0;
     
     line228:
-    cout << "What is the weight of the extra Grade? ";
+    cout << "______________________________________________" << endl;
+    cout << "What is the weight of the extra Grade: ";
     cin >> weight;
     totalPercent += weight;
     cout << "Grade: ";

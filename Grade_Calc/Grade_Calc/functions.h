@@ -23,7 +23,7 @@ bool checkYesNo() {
 //------------------------------------------------------------------------------
 
 void question(string name) {
-    cout << "Do you have any " << name << " grades? Enter 'Y' for yes, 'N' for no: ";
+    cout << "\nDo you have any " << name << " grades? (Y/N): ";
     return;
 }
 

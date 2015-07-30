@@ -10,30 +10,13 @@ class Grade {
 public:
     Grade();
     bool checkAn(float);
-    
-    void setHwGrades();
-    float getHwPoints() const;                    // Homework
-    std::vector<float> hwGrades;
-    
-    void setAssignmentGrades();
-    float getAssignmentPoints() const;            // Assignments
-    std::vector<float> assignmentGrades;
-    
-    void setQuizGrades();
-    float getQuizPoints() const;                  // Quizzes
-    std::vector<float> quizGrades;
-    
-    void setProjectGrades();
-    float getProjectPoints() const;               // Projects
-    std::vector<float> projectGrades;
-    
-    void setTestGrades();
-    float getTestPoints() const;                  // Tests
-    std::vector<float> testGrades;
+    void setGrades(string);
+    float getPoints() const;
+    vector<float> grades;
     
     void setExtraGrades();
-    float getExtraGradesPoints() const;           // Extra grades
-    std::vector<float> extraGrades;
+    float getExtraGradesPoints() const;
+    vector<float> extraGrades;
     
     int totalPercent;
     

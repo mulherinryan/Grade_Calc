@@ -20,8 +20,6 @@ bool checkYesNo() {
     return false;
 }
 
-//------------------------------------------------------------------------------
-
 void question(string name) {
     cout << "\nDo you have any " << name << " grades? (Y/N): ";
     return;

@@ -50,8 +50,8 @@ int main() {
         
         // sets homework grades
         if (yesNo) {
-            grade.setHwGrades();
-            points.push_back(grade.getHwPoints());
+            grade.setGrades("Homework");
+            points.push_back(grade.getPoints());
         }
         
         // Assignment grades
@@ -60,8 +60,8 @@ int main() {
         
         // sets assignment grades
         if (yesNo) {
-            grade.setAssignmentGrades();
-            points.push_back(grade.getAssignmentPoints());
+            grade.setGrades("Assignment");
+            points.push_back(grade.getPoints());
         }
         
         // Quiz grades
@@ -70,8 +70,8 @@ int main() {
         
         // sets quiz grades
         if (yesNo) {
-            grade.setQuizGrades();
-            points.push_back(grade.getQuizPoints());
+            grade.setGrades("Quiz");
+            points.push_back(grade.getPoints());
         }
         
         // Project grades
@@ -80,8 +80,8 @@ int main() {
         
         // sets Project grades
         if (yesNo) {
-            grade.setProjectGrades();
-            points.push_back(grade.getProjectPoints());
+            grade.setGrades("Project");
+            points.push_back(grade.getPoints());
         }
         
         // Test grades
@@ -90,12 +90,12 @@ int main() {
         
         // sets test grades
         if (yesNo) {
-            grade.setTestGrades();
-            points.push_back(grade.getTestPoints());
+            grade.setGrades("Test");
+            points.push_back(grade.getPoints());
         }
         
         // asks for any extra grades to be entered
-        cout << "Are there any other grades that need to be entered (Y/N): ";
+        cout << "\nAre there any other grades that need to be entered (Y/N): ";
         yesNo = checkYesNo();
         
         // sets extra grades

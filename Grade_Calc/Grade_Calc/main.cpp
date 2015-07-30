@@ -40,58 +40,22 @@ int main() {
     
     // if average is not already known, asks for individual grades
     if (!yesNo) {
+        cout << "\n----------------------------------------------------------------------" << endl;
+        cout << "|Note: You can type 'b' or 'back' anytime to go to the previous question.|" << endl;
         cout << "----------------------------------------------------------------------" << endl;
-        cout << "|Note: You can type 'b' or 'back' anytime to go to previous question.|" << endl;
-        cout << "----------------------------------------------------------------------" << endl;
         
-        // Homework grades
-        question("Homework");
-        yesNo = checkYesNo();
+        vector<string> assignmentNames {"Homework", "Assignment", "Quiz", "Project", "Test"};
         
-        // sets homework grades
-        if (yesNo) {
-            grade.setGrades("Homework");
-            points.push_back(grade.getPoints());
-        }
-        
-        // Assignment grades
-        question("Assignment");
-        yesNo = checkYesNo();
-        
-        // sets assignment grades
-        if (yesNo) {
-            grade.setGrades("Assignment");
-            points.push_back(grade.getPoints());
-        }
-        
-        // Quiz grades
-        question("Quiz");
-        yesNo = checkYesNo();
-        
-        // sets quiz grades
-        if (yesNo) {
-            grade.setGrades("Quiz");
-            points.push_back(grade.getPoints());
-        }
-        
-        // Project grades
-        question("Project");
-        yesNo = checkYesNo();
-        
-        // sets Project grades
-        if (yesNo) {
-            grade.setGrades("Project");
-            points.push_back(grade.getPoints());
-        }
-        
-        // Test grades
-        question("Test");
-        yesNo = checkYesNo();
-        
-        // sets test grades
-        if (yesNo) {
-            grade.setGrades("Test");
-            points.push_back(grade.getPoints());
+        // loops through vector to get each possible assignment grade input
+        for (int i = 0; i < assignmentNames.size(); i++) {
+            question(assignmentNames[i]);
+            yesNo = checkYesNo();
+            
+            // sets grade for the assignment at assignmentNames[i]
+            if (yesNo) {
+                grade.setGrades(assignmentNames[i]);
+                points.push_back(grade.getPoints());
+            }
         }
         
         // asks for any extra grades to be entered
@@ -143,6 +107,7 @@ int main() {
     }
     
 //------------------------------------------------------------------------------
+    
     // displays score needed on final to achieve grade desired
     cout << "_________________________________________________";
     cout << "___________________" << endl;

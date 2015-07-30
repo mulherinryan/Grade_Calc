@@ -9,7 +9,6 @@ using namespace std;
 class Grade {
 public:
     Grade();
-    bool checkAn(float);
     void setGrades(string);
     float getPoints() const;
     vector<float> grades;

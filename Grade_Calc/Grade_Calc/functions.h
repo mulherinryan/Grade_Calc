@@ -25,4 +25,11 @@ void question(string name) {
     return;
 }
 
+bool checkAn(float num) {
+    if (num >= 80 && num < 90) {
+        return true;
+    }
+    return false;
+}
+
 #endif /* defined(__Grade_Calc__functions__) */

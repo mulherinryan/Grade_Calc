@@ -9,13 +9,6 @@ Grade::Grade() {
     totalPercent = 0;
 }
 
-bool Grade::checkAn(float num) {
-    if (num >= 80 && num < 90) {
-        return true;
-    }
-    return false;
-}
-
 void Grade::setGrades(string assignment) {
     numGrades = 0;
     weight = 0;

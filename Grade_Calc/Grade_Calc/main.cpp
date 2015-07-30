@@ -131,27 +131,27 @@ int main() {
     if (pointsNeeded < finalWeight) {
         scoreNeeded = pointsNeeded / finalWeight * 100;
     }
+    // display best possible score if grade desired isn't obtainable
     else {
         cout << "\n\n___________________________________________" << endl;
         cout << "You wont be able to get the grade you want." << endl;
         cout << "The best you can get is";
-        if (grade.checkAn(totalPoints + finalWeight)) { cout << " an "; }
+        if (checkAn(totalPoints + finalWeight)) { cout << " an "; }
         else { cout << " a "; }
         cout << totalPoints + finalWeight << "% if you score a 100% on your final." << endl;
         return 0;
     }
     
 //------------------------------------------------------------------------------
-    
+    // displays score needed on final to achieve grade desired
     cout << "_________________________________________________";
     cout << "___________________" << endl;
     cout << "You need to score";
-    if (grade.checkAn(scoreNeeded)) { cout << " an "; }
+    if (checkAn(scoreNeeded)) { cout << " an "; }
     else { cout << " a "; }
     cout << setprecision(2) << fixed;
     cout << scoreNeeded;
     cout << "% on your final to get the grade you want." << endl;
 
-//------------------------------------------------------------------------------
     return 0;
 }

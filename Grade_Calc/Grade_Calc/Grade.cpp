@@ -18,31 +18,31 @@ void Grade::setGrades(string assignment) {
     grades.erase(grades.begin(), grades.begin() + grades.size());
     
     int i = 1;
-    line33 :
+    line21 :
     cout << "______________________________________________" << endl;
     cout << "What is the weight of " << assignment << " assignments: ";
     cin >> weight;
     totalPercent += weight;
-    line36 :
+    line26 :
     cout << "How many " << assignment << " assignments did you have: ";
     cin >> number;
     if (number == "b" || number == "back") {
-        goto line33;
+        goto line21;
     }
     numGrades = atoi(number.c_str());
     
     // inserts each grade entered into vector grades
     while (i <= numGrades) {
-        line46 :
+        line36 :
         cout << assignment << " " << i << " grade: ";
         cin >> grade;
         if (grade == "b" || grade == "back") {
             if (i == 1) {
-                goto line36;
+                goto line26;
             }
             grades.erase(grades.begin() + (i - 2));
             --i;
-            goto line46;
+            goto line36;
         }
         gradeP = atoi(grade.c_str());
         grades.push_back(gradeP);
@@ -66,7 +66,7 @@ float Grade::getPoints() const {
 void Grade::setExtraGrades() {
     weight = 0;
     
-    line228:
+    line69:
     cout << "______________________________________________" << endl;
     cout << "What is the weight of the extra Grade: ";
     cin >> weight;
@@ -74,7 +74,7 @@ void Grade::setExtraGrades() {
     cout << "Grade: ";
     cin >> number;
     if (number == "b" || number == "back") {
-        goto line228;
+        goto line69;
     }
     gradeP = atoi(number.c_str());
     extraGrades.push_back(gradeP);
